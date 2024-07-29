@@ -1,11 +1,15 @@
 name: Test React App
-on: push
+on: workflow_dispatch
 jobs: 
   test:
-    runs-on: windows-latest
+    runs-on: 	windows-latest
     steps:
     - name: Get repository code
       uses: actions/checkout@v4
+    - name: Print a few lines
+      run: |
+        echo First line!
+        echo Second line!
     - name: Install dependecies
       run: npm ci
     - name: Test application
