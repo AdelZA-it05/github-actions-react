@@ -1,12 +1,12 @@
-name: demo Workflow
-on: workflow_dispatch
-jobs:
-  print:
-    runs-on: 	windows-latest
+name: Test React App
+on: push
+jobs: 
+  test:
+    runs-on: windows-latest
     steps:
-      - name: Print to console
-        run: echo Hello GH Actions!
-      - name: Print a few lines
-        run: |
-          echo First line!
-          echo Second line!
+    - name: Get repository code
+      uses: actions/checkout@v4
+    - name: Install dependecies
+      run: npm ci
+    - name: Test application
+      run: npm run test
