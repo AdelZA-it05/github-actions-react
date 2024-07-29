@@ -1,7 +1,9 @@
 name: Deploy React App
+run: echo Deploying ... 
 on: push
 jobs: 
   test:
+    run: echo Deploying ... ...
     runs-on: windows-latest
     steps:
     - name: Get repository code
