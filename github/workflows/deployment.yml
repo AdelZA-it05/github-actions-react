@@ -1,32 +1,30 @@
-name: Deploy React App
+name: Test
 on: push
-jobs: 
+jobs:
   test:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
-    - name: Get repository code
-      uses: actions/checkout@v4
-    - name: Install dependecies
-      run: npm ci
-    - name: Test application
-      run: npm run testgit 
-  Lint:
-    runs-on: windows-latest
+      - name: Get repository code
+        uses: actions/checkout@v3
+      - name: Install deps
+        run: npm install
+      - name: Test app
+        run: npm run test
+  lint:
+    runs-on: ubuntu-latest
     steps:
-    - name: Get repository code
-      uses: actions/checkout@v4
-    - name: Install dependecies
-      run: npm ci
-    - name: Lint application
-      run: npm run lint   
+      - name: Get repository code
+        uses: actions/checkout@v3
+      - name: Install deps
+        run: npm install
+      - name: Lint code
+        run: npm run lint
   build:
-      runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
-    - name: Get repository code
-      uses: actions/checkout@v4
-    - name: Install dependecies
-      run: npm ci
-    - name: Build application
-      run: npm run build
-    - name: Deploy
-      run: echo Deploying ...
+      - name: Get repository code
+        uses: actions/checkout@v3
+      - name: Install deps
+        run: npm install
+      - name: Build App
+        run: npm run build
