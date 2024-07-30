@@ -4,5 +4,5 @@ jobs:
   print:
     runs-on: windows-latest
     steps:
-      - name: Print event of issue
+      - name: Print event  of issue
         run: echo "${{ github }}"
