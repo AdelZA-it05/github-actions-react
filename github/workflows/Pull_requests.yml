@@ -1,8 +1,10 @@
 name: Print Pull Request Context
-on: [workflow_dispatch, push]
+on: 
+  workflow_dispatch:
+  push:
 jobs:
   print:
     runs-on: windows-latest
     steps:
       - name: Print event  of issue
-        run: echo "${{ github }}"
+        run: echo "${{ github.event }}"
